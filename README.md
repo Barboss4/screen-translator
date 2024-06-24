@@ -47,7 +47,7 @@ Este projeto é uma ferramenta de sobreposição de tela que captura texto em um
 1. Execute o script principal:
 
     ```bash
-    python tradutor_de_tela.py
+    python tradutor.py
     ```
 
 2. Uma janela de sobreposição aparecerá na tela com duas caixas de seleção de área. A caixa azul é para capturar o texto, e a caixa vermelha é para exibir a tradução.
