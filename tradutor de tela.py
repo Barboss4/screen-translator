@@ -28,67 +28,67 @@ class Overlay(QWidget):
 
         # Cria o grupo de controle
         self.control_group = QGroupBox('Control Box', self)
-        self.control_group.setGeometry(10, 10, 300, 200)
+        self.control_group.setGeometry(10, 10, 300, 250)
         self.control_group.setStyleSheet("background-color: rgba(255, 255, 255, 180);")
 
         # Configurar controles de entrada de texto para as dimensões da caixinha de captura
-        self.width_label_capture = QLabel('W:', self.control_group)
-        self.width_label_capture.setGeometry(10, 35, 20, 20)
+        self.width_label_capture = QLabel('W azul:', self.control_group)
+        self.width_label_capture.setGeometry(10, 20, 80, 20)
 
         self.width_input_capture = QLineEdit(self.control_group)
         self.width_input_capture.setText(str(self.capture_rect.width()))
-        self.width_input_capture.setGeometry(30, 35, 50, 20)
+        self.width_input_capture.setGeometry(10, 40, 50, 20)
         self.width_input_capture.editingFinished.connect(self.update_capture_dimensions)
 
-        self.height_label_capture = QLabel('H:', self.control_group)
-        self.height_label_capture.setGeometry(90, 35, 20, 20)
+        self.height_label_capture = QLabel('H azul:', self.control_group)
+        self.height_label_capture.setGeometry(90, 20, 80, 20)
 
         self.height_input_capture = QLineEdit(self.control_group)
         self.height_input_capture.setText(str(self.capture_rect.height()))
-        self.height_input_capture.setGeometry(110, 35, 50, 20)
+        self.height_input_capture.setGeometry(90, 40, 50, 20)
         self.height_input_capture.editingFinished.connect(self.update_capture_dimensions)
 
         # Configurar controles de entrada de texto para as dimensões da caixinha de exibição
-        self.width_label_display = QLabel('W:', self.control_group)
-        self.width_label_display.setGeometry(10, 85, 20, 20)
+        self.width_label_display = QLabel('W vermelho:', self.control_group)
+        self.width_label_display.setGeometry(10, 70, 80, 20)
 
         self.width_input_display = QLineEdit(self.control_group)
         self.width_input_display.setText(str(self.display_rect.width()))
-        self.width_input_display.setGeometry(30, 85, 50, 20)
+        self.width_input_display.setGeometry(10, 90, 50, 20)
         self.width_input_display.editingFinished.connect(self.update_display_dimensions)
 
-        self.height_label_display = QLabel('H:', self.control_group)
-        self.height_label_display.setGeometry(90, 85, 20, 20)
+        self.height_label_display = QLabel('H vermelho:', self.control_group)
+        self.height_label_display.setGeometry(90, 70, 80, 20)
 
         self.height_input_display = QLineEdit(self.control_group)
         self.height_input_display.setText(str(self.display_rect.height()))
-        self.height_input_display.setGeometry(110, 85, 50, 20)
+        self.height_input_display.setGeometry(90, 90, 50, 20)
         self.height_input_display.editingFinished.connect(self.update_display_dimensions)
         
         # Adiciona um botão para iniciar a tradução
         self.translate_button = QPushButton('OK', self.control_group)
         self.translate_button.clicked.connect(self.capture_and_translate_text)
-        self.translate_button.setGeometry(10, 160, 50, 30)  # Ajuste conforme necessário
+        self.translate_button.setGeometry(10, 210, 50, 30)  # Ajuste conforme necessário
         
         # Adiciona um botão para fechar a aplicação
         self.close_button = QPushButton('Fechar', self.control_group)
         self.close_button.clicked.connect(self.close_application)
-        self.close_button.setGeometry(70, 160, 50, 30)  # Ajuste conforme necessário
+        self.close_button.setGeometry(70, 210, 50, 30)  # Ajuste conforme necessário
 
         # Adiciona uma combobox para escolher a linguagem de entrada para OCR
-        self.lang_input_label = QLabel('Lang OCR:', self.control_group)
-        self.lang_input_label.setGeometry(10, 120, 60, 20)
+        self.lang_input_label = QLabel('Linguagem original:', self.control_group)
+        self.lang_input_label.setGeometry(10, 120, 120, 20)
 
         self.lang_input_combo = QComboBox(self.control_group)
-        self.lang_input_combo.setGeometry(70, 120, 80, 20)
+        self.lang_input_combo.setGeometry(10, 140, 80, 20)
         self.lang_input_combo.addItems(['eng', 'fra', 'spa', 'deu'])  # Adicione mais idiomas conforme necessário
 
         # Adiciona uma combobox para escolher a linguagem de saída para tradução
-        self.lang_output_label = QLabel('Lang Trad:', self.control_group)
-        self.lang_output_label.setGeometry(160, 120, 60, 20)
+        self.lang_output_label = QLabel('Linguagem tradução:', self.control_group)
+        self.lang_output_label.setGeometry(160, 120, 120, 20)
 
         self.lang_output_combo = QComboBox(self.control_group)
-        self.lang_output_combo.setGeometry(220, 120, 80, 20)
+        self.lang_output_combo.setGeometry(160, 140, 80, 20)
         self.lang_output_combo.addItems(['pt', 'en', 'fr', 'es'])  # Adicione mais idiomas conforme necessário
 
         self.dragging_control_group = False
